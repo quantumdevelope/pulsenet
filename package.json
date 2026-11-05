@@ -1,0 +1,39 @@
+{
+  "name": "pulsenet",
+  "version": "0.1.0",
+  "description": "Dump and mirror websites from the command line: crawl a site, save pages and assets for offline browsing, rewrite links, export a JSON manifest.",
+  "type": "module",
+  "bin": {
+    "pulsenet": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "cli",
+    "crawler",
+    "scraper",
+    "website",
+    "mirror",
+    "offline",
+    "archive",
+    "typescript"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "test": "npm run build && node --test",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
